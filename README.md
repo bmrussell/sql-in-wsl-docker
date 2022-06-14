@@ -36,7 +36,7 @@ It's probably 1001
 
 6. And give ownership to SQL Server:
     ```bash
-    sudo chown 10001 mssql/log
+    sudo chown -R 10001 ./mssql
     ```
 7. Bring it up again
     ```bash
