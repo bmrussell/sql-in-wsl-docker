@@ -1,0 +1,17 @@
+---
+version: "3.0"
+services:
+  calibre:
+    image: mcr.microsoft.com/mssql/server:2019-latest 
+    container_name: sql2019
+    hostname: sql2019
+    environment:
+      - ACCEPT_EULA=Y 
+      - SA_PASSWORD=${SA_PASSWORD}
+      - MSSQL_PID=Developer
+    volumes:
+      - ./mssql/data:/var/opt/mssql/data
+      - ./mssql/log:/var/opt/mssql/log
+    ports:
+      - 1433:1433
+    restart: unless-stopped
